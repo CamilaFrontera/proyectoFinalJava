@@ -1,0 +1,5 @@
+package com.ApiEstudiantes.app.service;
+
+public interface StudentService {
+
+}

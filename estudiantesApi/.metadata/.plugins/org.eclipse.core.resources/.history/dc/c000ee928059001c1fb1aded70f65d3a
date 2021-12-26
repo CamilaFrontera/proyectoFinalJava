@@ -1,0 +1,29 @@
+package com.ApiEstudiantes.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ApiEstudiantes.app.model.Student;
+import com.ApiEstudiantes.app.service.StudentService;
+
+@RestController
+@RequestMapping("/api/students")
+public class StudentController {
+	
+	 @Autowired
+	private StudentService studentService;
+	 
+	 //Create
+	 @PostMapping
+	 public ResponseEntity<?> create (Student student){
+		 
+	 }
+	 //Reload
+	 //Update
+	 //Delete
+	 
+
+}

@@ -1,0 +1,8 @@
+package com.ApiEstudiantes.app.service;
+
+import com.ApiEstudiantes.app.model.Student;
+
+public interface StudentService {
+
+	public Iterable<Student> findAll();
+}

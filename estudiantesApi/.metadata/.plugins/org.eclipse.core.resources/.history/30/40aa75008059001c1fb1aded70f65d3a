@@ -1,0 +1,5 @@
+package com.ApiEstudiantes.app.controller;
+
+public class StudentController {
+
+}

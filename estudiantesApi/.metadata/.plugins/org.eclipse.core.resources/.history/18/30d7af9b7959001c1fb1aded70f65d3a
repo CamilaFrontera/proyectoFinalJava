@@ -1,0 +1,5 @@
+package com.ApiEstudiantes.app.model;
+
+public class Student {
+
+}

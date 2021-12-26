@@ -1,0 +1,48 @@
+package com.ApiEstudiantes.app.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.ApiEstudiantes.app.model.Student;
+import com.ApiEstudiantes.app.repository.StudentRepository;
+
+@Service
+public class StudentServideImplementation implements StudentService{
+
+	@Autowired
+	private StudentRepository studentRepository;
+	
+	@Override
+	public Iterable<Student> findAll() {
+		return studentRepository.findAll();
+	}
+
+	@Override
+	public Page<Student> findAll(Pageable pageable) {
+		
+		return null;
+	}
+
+	@Override
+	public Optional<Student> findById(Integer id) {
+		
+		return null;
+	}
+
+	@Override
+	public Student save(Student student) {
+		
+		return null;
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		
+		
+	}
+
+}
