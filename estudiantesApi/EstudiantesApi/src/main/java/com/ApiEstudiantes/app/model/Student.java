@@ -1,7 +1,6 @@
 package com.ApiEstudiantes.app.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,13 +31,9 @@ public class Student implements Serializable{
 	
 	private String avatar;
 	
-	private String birthday;
+	private Integer age;
 	
 	private Integer calification;
-	
-	private Integer Age;
-	
-	
 	
 
 	public Integer getId() {
@@ -81,12 +76,13 @@ public class Student implements Serializable{
 		this.avatar = avatar;
 	}
 
-	public String getBirthday() {
-		return birthday;
+	
+	public Integer getAge() {
+		return age;
 	}
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 
 	public Integer getCalification() {
@@ -96,16 +92,5 @@ public class Student implements Serializable{
 	public void setCalification(Integer calification) {
 		this.calification = calification;
 	}
-
-	public Integer getAge() {
-		return Age;
-	}
-
-	public void setAge(Integer age) {
-		Age = age;
-	}
-	
-	
-	
 
 }

@@ -1,6 +1,5 @@
 package com.ApiEstudiantes.app.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ApiEstudiantes.app.model.Student;
@@ -57,7 +55,7 @@ public class StudentController {
 		 student.get().setLastName(studentDetails.getLastName());
 		 student.get().setEmail(studentDetails.getEmail());
 		 student.get().setAvatar(studentDetails.getAvatar());
-		 student.get().setBirthday(studentDetails.getBirthday());
+		 student.get().setAge(studentDetails.getAge());
 		 
 		 return ResponseEntity.status(HttpStatus.CREATED).body(studentService.save(student.get()));
 	 }
@@ -85,9 +83,16 @@ public class StudentController {
 		 
 		 return students;
 	 }
+
+	 //encontrar por edad
 	 
-	 @GetMapping("/query")
-	    public ArrayList<Student> findByCalification(@RequestParam("calification") Integer calification){
-	        return this.studentService.findByCalification(calification);
-	    }
+	 @GetMapping("/findByAge/{age}")
+	 public List<Student> findByAge(@PathVariable Integer age){
+		return studentService.findbyAge(age);
+	 }
+	 
+	 @GetMapping("/top3califications")
+	 public List<Student> findTopThree(){
+		return studentService.findTopThree();
+	 }
 }

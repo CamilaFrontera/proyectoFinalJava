@@ -1,14 +1,17 @@
 package com.ApiEstudiantes.app.service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import com.ApiEstudiantes.app.model.Student;
 
+@Service
 public interface StudentService {
+	
 
 	public Iterable<Student> findAll();
 	
@@ -19,6 +22,10 @@ public interface StudentService {
 	public Student save(Student student);
 	
 	public void deleteById(Integer id);
+	
 
-	public ArrayList<Student> findByCalification(Integer calification);
+
+	public List<Student> findbyAge(Integer age);
+	
+	public List<Student> findTopThree();
 }

@@ -1,10 +1,11 @@
 package com.ApiEstudiantes.app.service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +14,7 @@ import com.ApiEstudiantes.app.model.Student;
 import com.ApiEstudiantes.app.repository.StudentRepository;
 
 @Service
-public class StudentServideImplementation implements StudentService{
+public  class StudentServideImplementation implements StudentService{
 
 	@Autowired
 	private StudentRepository studentRepository;
@@ -49,11 +50,19 @@ public class StudentServideImplementation implements StudentService{
 		
 	}
 	
+	
+
+	@Override
+	public List<Student> findbyAge(Integer age) {
+		return studentRepository.findByAge(age);
+	}
 
 
-
-	 public ArrayList<Student>  findByCalification(Integer calification) {
-	        return StudentRepository.findByCalification(calification);
-	    }
-
+	
+	@Override
+	public List<Student> findTopThree(){
+	return studentRepository.findTopThree(PageRequest.of(0, 3));
+	}
+		
+	
 }
