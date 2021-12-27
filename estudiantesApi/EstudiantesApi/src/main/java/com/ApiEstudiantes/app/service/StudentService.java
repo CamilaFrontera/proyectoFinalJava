@@ -27,5 +27,7 @@ public interface StudentService {
 
 	public List<Student> findbyAge(Integer age);
 	
+	public List<Student> findOverEighteen();
+	
 	public List<Student> findTopThree();
 }

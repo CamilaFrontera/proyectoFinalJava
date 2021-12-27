@@ -20,6 +20,9 @@ public interface StudentRepository extends JpaRepository<Student, Integer>{
 	@Query(value = "SELECT  * FROM db_estudiantes.students  ORDER BY calification  DESC", nativeQuery = true)
 	List<Student> findTopThree(PageRequest of);
 
+	@Query(value = "SELECT * FROM db_estudiantes.students WHERE age >= 18", nativeQuery = true)
+	List<Student> findOverEighteen();
+
 
 	
 

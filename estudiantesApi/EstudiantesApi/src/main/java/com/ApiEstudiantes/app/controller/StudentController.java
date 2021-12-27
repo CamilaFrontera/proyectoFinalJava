@@ -91,8 +91,14 @@ public class StudentController {
 		return studentService.findbyAge(age);
 	 }
 	 
+	 //top 3 calificaciones 
 	 @GetMapping("/top3califications")
 	 public List<Student> findTopThree(){
 		return studentService.findTopThree();
+	 }
+
+	 @GetMapping("/studentsOver18")
+	 public List<Student> findOverEighteen(){
+		return studentService.findOverEighteen();
 	 }
 }
